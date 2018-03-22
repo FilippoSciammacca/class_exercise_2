@@ -12,10 +12,10 @@
 
 class GameCharacter {
 public:
-    GameCharacter(int hp = 10, int a = 10); // FIXME
+    GameCharacter(int hp = 10, int a = 10);
 
     // overload
-    void move(int x, int y); // FIXME
+    void move(int x, int y);
     void move(int distance); // FIXME - move by distance in both x and y directions
 
     int getPosX() {
@@ -44,7 +44,7 @@ public:
 
     int getArmor();
 
-    void setArmor(int defense); //commento inutile messo solo per il commit
+    void setArmor(int defense);
 
     bool fight(GameCharacter &enemy); // FIXME
 

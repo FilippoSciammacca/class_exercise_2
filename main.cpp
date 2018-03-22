@@ -127,9 +127,9 @@ bool updateGame(const GameEvent &gameEvent, GameCharacter &hero, GameCharacter &
 
 // render Head Up Display
 void renderHUD(GameCharacter &hero) {
-    std::cout << "Press: w,a,s,d,f or Q to quit, lezzo." << std::endl;
+    std::cout << "Press: w,a,s,d,f or Q to quit." << std::endl;
     std::cout << "Hero - HP: " << hero.getHP() << " - armor: " << hero.getArmor() << " - weapon's strength: " << hero.getWeapon()->getStrength();
-    // TODO if the hero has a weapon print its strength DONE
+    // TODO if the hero has a weapon print its strength
     std::cout << std::endl;
 }
 
@@ -185,8 +185,8 @@ int main() {
     Dungeon map;
     map.createDungeon(80, 25, 50);
     // create hero and set him/her up
-    GameCharacter hero;
-    // TODO instantiate a static "hero" object of type GameCharacter with default parameters DONE
+    static GameCharacter hero;
+    // TODO instantiate a static "hero" object of type GameCharacter with default parameters
     // find a legal start position
     int startX = 0;
     int startY = 0;
@@ -194,10 +194,10 @@ int main() {
     hero.setPosX(startX);
     hero.setPosY(startY);
     // create a weapon and give it to hero
-    Weapon sword(10, false);
-    // TODO instantiate a static "sword" object of type Weapon with strenght=10 and no magic DONE
+    static Weapon sword(10, false);
+    // instantiate a static "sword" object of type Weapon with strenght=10 and no magic DONE
     hero.setWeapon(&sword);
-    // TODO give the weapon to the hero DONE
+    // give the weapon to the hero
     // create an enemy with a low grade armor
     GameCharacter enemy(20, 2);
     // find monster position not too far from hero position
@@ -208,7 +208,7 @@ int main() {
     enemy.setPosY(startY);
 
     // render
-    renderHUD(hero); // FIXME DONE
+    renderHUD(hero);
     renderGame(map, hero, enemy);
     // game loop. See http://gameprogrammingpatterns.com/game-loop.html
     while (true) {

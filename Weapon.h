@@ -9,9 +9,9 @@
 class Weapon {
 public:
     Weapon(int strength, bool magic);
-    // TODO implement constructor with two arguments: strength and magic, with a default value of false
+    // implement constructor with two arguments: strength and magic, with a default value of false
 
-    int use(); // FIXME
+    int use();
     int getStrength() const;
 
     void setStrength(int strength);
@@ -19,7 +19,6 @@ public:
     bool isMagic() const;
 
     void setMagic(bool magic);
-    // TODO implement getter/setter for attributes
 
 protected:
     int strength;

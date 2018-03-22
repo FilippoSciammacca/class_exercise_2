@@ -10,7 +10,6 @@ int Weapon::use() {
     if(magic)
         return strength * 2;
     return strength;
-    // TODO return strenght, but if the weapon is magic return a doubled value of strength
 }
 
 Weapon::Weapon(int strength = 10, bool magic = false) : strength(strength), magic(magic) {}

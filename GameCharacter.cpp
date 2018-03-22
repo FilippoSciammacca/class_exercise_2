@@ -18,7 +18,6 @@ GameCharacter::GameCharacter(int hp, int a) {
     setPosX(0);
     setPosY(0);
     setWeapon(nullptr);
-    // TODO set up the attributes
     // position and weapon must be set to 0 or null pointer
 }
 
@@ -41,13 +40,11 @@ void GameCharacter::setWeapon(Weapon* weapon) {
 void GameCharacter::move(int x, int y) {
     posX += x;
     posY += y;
-    // TODO implement
 }
 
 void GameCharacter::move(int distance) {
     posX += distance;
     posY += distance;
-    // TODO implement
 }
 
 int GameCharacter::getArmor() {
@@ -62,7 +59,7 @@ bool GameCharacter::fight(GameCharacter &enemy) {
     int hit = 1;
     if(weapon)
         hit = weapon->use();
-    // TODO if a weapon is available use it and store result in hit
+    // if a weapon is available use it and store result in hit
 
     int damage = 0;
     if(hit > enemy.getArmor()){
@@ -91,7 +88,6 @@ int GameCharacter::receiveDamage(int points) {
         points /= 2;
     else if(armor >= 1)
         points -= 2;
-    // TODO
     // if armor > 4 then points are divided by 3
     // if armor > 2 then points are divided by 2
     // if armor >= 1 then points are reduced by 2
