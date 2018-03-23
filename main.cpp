@@ -185,7 +185,7 @@ int main() {
     Dungeon map;
     map.createDungeon(80, 25, 50);
     // create hero and set him/her up
-    static GameCharacter hero;
+    static GameCharacter hero(25, 15);
     // TODO instantiate a static "hero" object of type GameCharacter with default parameters
     // find a legal start position
     int startX = 0;

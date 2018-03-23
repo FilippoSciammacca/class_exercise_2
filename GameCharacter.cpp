@@ -75,18 +75,17 @@ bool GameCharacter::fight(GameCharacter &enemy) {
     }
     else
         cout << "You miss the hit..." << endl;
-    if(enemy.getHP() <= 0)
-        std::cout << "You killed the monster!" << std::endl;
+    alive(enemy);
 
     return success;
 }
 
 int GameCharacter::receiveDamage(int points) {
-    if(armor > 4)
+    if (armor > 4)
         points /= 3;
-    else if(armor > 2)
+    else if (armor > 2)
         points /= 2;
-    else if(armor >= 1)
+    else if (armor >= 1)
         points -= 2;
     // if armor > 4 then points are divided by 3
     // if armor > 2 then points are divided by 2
@@ -100,4 +99,10 @@ int GameCharacter::receiveDamage(int points) {
         armor--;
 
     return points;
+}
+
+bool GameCharacter::alive(GameCharacter &enemy) {
+    if (enemy.getHP() <= 0){
+        cout << "You defeated the monster!" << std::endl;
+    }
 }

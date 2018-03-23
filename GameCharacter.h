@@ -50,6 +50,8 @@ public:
 
     int receiveDamage(int points); // FIXME
 
+    bool alive(GameCharacter &enemy); //TODO will it work?
+
 private:
     int HP;
     int armor;
