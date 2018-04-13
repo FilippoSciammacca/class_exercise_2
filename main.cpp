@@ -199,7 +199,7 @@ int main() {
     hero.setWeapon(&sword);
     // give the weapon to the hero
     // create an enemy with a low grade armor
-    GameCharacter enemy(20, 2);
+    GameCharacter enemy(15, 2);
     // find monster position not too far from hero position
     startX += 5;
     startY += 3;
